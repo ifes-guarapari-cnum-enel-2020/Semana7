@@ -9,7 +9,7 @@ O método de Gauss é um escalonamento de sucessivas operações elementares num
 https://www.ufrgs.br/reamat/CalculoNumerico/livro-py/sdsl.html
 
 A eliminação gaussiana consiste em manipular o sistema através de determinadas operações elementares, para triangularizar a matriz estendida, e a solução é obtida por substituição regressiva. Em Julia, o método é implementado nativamente pela linguagem, em que dadas as matrizes A e B, usa-se o operador de barra invertida para achar a solução possível.
-´´´julia
+```julia
 A = [1 1 1 ;
      4 4 2 ;
      2 1 -1]
@@ -18,10 +18,10 @@ B = [1 ; 2 ; 0]
 
 X = A \ B
 println(X)
-´´´
+```
 
 No método de Gauss-Jacobi, cada incógnita é uma equação de ponto fixo do sistema e, a partir de aproximação inicial, é recalculada após sucessivas iterações, em que o valor anterior é usado para o próximo cálculo.
-´´´julia
+```julia
 error = 10^-3
 
 function jacobi(A, B, k)
@@ -49,10 +49,10 @@ end
 
 X = jacobi(A, B, 10)
 println(X)
-´´´
+```
 
 O método de Gauss-Seidel é uma melhoria do Jacobi, em que a próxima variável utiliza os cálculos anteriores ainda da mesma interação, diminuindo a quantidade necessária de novas repetições.
-´´´julia
+```julia
 function seidel(A, B, k)
  n = size(B,1)
  X = zeros(n)
@@ -78,4 +78,4 @@ end
 
 X = seidel(A, B, 100)
 println(X)
-´´´
+```

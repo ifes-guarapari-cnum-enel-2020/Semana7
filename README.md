@@ -79,3 +79,5 @@ end
 X = seidel(A, B, 100)
 println(X)
 ```
+
+Uma condição suficiente, porém não necessária, para que os métodos de Gauss-Seidel e Jacobi convirjam é a que a matriz seja estritamente diagonal dominante, o que deve ser observado.
